@@ -1,0 +1,154 @@
+.cart {
+   @include adaptiveValue(padding-top, 94, 20, $maxWidthContainer, $mobile);
+
+   max-width: toRem(820);
+   margin: 0 auto;
+
+   &__top {
+      margin-bottom: toRem(20);
+   }
+}
+.cart-list {
+   margin-bottom: toRem(10);
+   &__item {
+      @include adaptiveValue(padding-top, 30, 20, $maxWidthContainer, $mobile);
+      @include adaptiveValue(padding-bottom, 30, 20, $maxWidthContainer, $mobile);
+
+      border-top: toRem(1) solid rgb(244, 244, 244);
+
+      @media (max-width: toEm(600)) {
+         flex-direction: column;
+      }
+   }
+   &__info {
+      gap: toRem(14);
+   }
+   &__img {
+      width: toRem(80);
+      height: toRem(80);
+   }
+   &__descr {
+      color: rgb(141, 141, 141);
+      @include adaptiveValue(font-size, 22, 16, $maxWidthContainer, $mobile);
+   }
+   &__price {
+      text-wrap: nowrap;
+   }
+   &__counts {
+      gap: toRem(12);
+   }
+   &__btn {
+      width: toRem(32);
+      height: toRem(32);
+
+      padding: toRem(5);
+
+      border: toRem(1) solid rgb(254, 95, 30);
+
+      transition: background-color 0.3s, color 0.3s, border 0.3s;
+
+      @media (any-hover: hover) {
+         &:hover:not(:disabled) {
+            background-color: rgb(254, 95, 30);
+            .cart-list__icon {
+               fill: $white;
+            }
+         }
+      }
+
+      &:disabled {
+         border: toRem(1) solid rgb(208, 208, 208);
+         .cart-list__icon {
+            fill: rgb(208, 208, 208);
+         }
+         &:active {
+            position: static;
+         }
+      }
+   }
+   &__icon {
+      fill: rgb(254, 95, 30);
+
+      transition: fill 0.3s;
+   }
+   &__delete {
+      fill: $white;
+      path {
+         fill: rgb(208, 208, 208);
+         transition: fill 0.3s;
+      }
+      circle {
+         stroke: #d0d0d0;
+         transition: stroke 0.3s;
+      }
+
+      transition: fill 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            fill: $black;
+            path {
+               fill: $white;
+            }
+            circle {
+               stroke: $black;
+            }
+         }
+      }
+   }
+   &__actions {
+      flex-shrink: 0;
+      gap: toRem(20);
+      @media (min-width: toEm(600.98)) {
+         @include adaptiveValue(flex-basis, 350, 250, $maxWidthContainer, $mobile);
+      }
+      justify-content: space-between;
+   }
+}
+.cart-footer {
+   &__top,
+   &__bottom {
+      @include adaptiveValue(margin-bottom, 36, 20, $maxWidthContainer, $mobile);
+      @media (max-width: toEm($mobileSmall)) {
+         justify-content: center;
+      }
+   }
+   &__total {
+      font-size: toRem(22);
+   }
+   &__btn {
+      min-height: toRem(55);
+      flex-grow: 1;
+      @media (min-width: toEm($mobileSmall)) {
+         max-width: toRem(210);
+      }
+      padding: toRem(5) toRem(30);
+
+      transition: background-color 0.3s, color 0.3s;
+
+      &--back {
+         border: toRem(1) solid rgb(202, 202, 202);
+         color: rgb(202, 202, 202);
+         svg {
+            path {
+               stroke: #d3d3d3;
+               transition: stroke 0.3s;
+            }
+         }
+
+         @media (any-hover: hover) {
+            &:hover {
+               border: toRem(1) solid rgb(254, 95, 30);
+               background-color: rgb(254, 95, 30);
+               color: $white;
+               path {
+                  stroke: $white;
+               }
+            }
+         }
+      }
+      &--pay {
+         background-color: rgb(254, 95, 30);
+         color: $white;
+      }
+   }
+}

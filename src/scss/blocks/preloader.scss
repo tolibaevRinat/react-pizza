@@ -1,0 +1,19 @@
+.preloader {
+   width: toRem(200);
+   height: toRem(200);
+
+   top: 50%;
+   left: 50%;
+   translate: -50% -50%;
+
+   animation: circle 2s linear 0s infinite;
+}
+
+@keyframes circle {
+   0% {
+      rotate: 0deg;
+   }
+   100% {
+      rotate: 360deg;
+   }
+}

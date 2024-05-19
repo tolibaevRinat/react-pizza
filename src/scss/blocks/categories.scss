@@ -1,0 +1,20 @@
+.categories {
+   &__btn {
+      padding: toRem(15) toRem(30);
+      background-color: rgb(249, 249, 249);
+
+      transition: background-color 0.3s, color 0.3s;
+
+      &.active {
+         background-color: rgb(40, 40, 40);
+         color: $white;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: rgb(40, 40, 40);
+            color: $white;
+         }
+      }
+   }
+}

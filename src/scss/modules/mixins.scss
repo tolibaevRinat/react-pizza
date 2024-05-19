@@ -1,0 +1,14 @@
+$pc: $maxWidthContainer + 30;
+$tablet: 991.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;
+
+@mixin adaptiveValue($property, $startSize, $finishSize, $startWidth, $finishWidth) {
+  $rangeSize: $startSize - $finishSize;
+  $rangeWidth: $startWidth - $finishWidth;
+  #{$property}: clamp(
+    #{$finishSize}px,
+    calc(#{$finishSize}px + #{$rangeSize} * ((100vw - #{$finishWidth}px) / #{$rangeWidth})),
+    #{$startSize}px
+  );
+}

@@ -1,0 +1,60 @@
+body {
+   font-family: $fontFamily, Arial, Helvetica, sans-serif;
+   color: $color;
+   background-color: rgb(255, 223, 140);
+   @include adaptiveValue(font-size, 16, 14, $maxWidthContainer, $mobile);
+
+   @include adaptiveValue(padding, 44, 10, $maxWidthContainer, $mobile);
+
+   line-height: calc(19 / 16);
+}
+
+.wrapper {
+   background-color: $white;
+   @include adaptiveValue(padding-bottom, 96, 20, $maxWidthContainer, $mobile);
+   @include adaptiveValue(padding-top, 50, 20, $maxWidthContainer, $mobile);
+
+   @include adaptiveValue(padding-left, 40, 0, $maxWidthContainer, $mobile);
+   @include adaptiveValue(padding-right, 40, 0, $maxWidthContainer, $mobile);
+   border-radius: toRem(10);
+
+   max-width: toRem(1340);
+   margin: 0 auto;
+
+   position: relative;
+}
+
+.radius-50 {
+   border-radius: 50%;
+}
+.radius-30 {
+   border-radius: toRem(30);
+}
+.radius-10 {
+   border-radius: toRem(10);
+}
+.radius-5 {
+   border-radius: toRem(5);
+}
+
+.title {
+   color: $black;
+   @include adaptiveValue(font-size, 32, 26, $maxWidthContainer, $mobile);
+   font-weight: 700;
+}
+.price {
+   @include adaptiveValue(font-size, 22, 18, $maxWidthContainer, $mobile);
+   font-weight: 700;
+   color: $black;
+   letter-spacing: toRem(0.5);
+
+   &--yellow {
+      color: rgb(254, 95, 30);
+   }
+}
+.btn {
+   position: relative;
+   &:active {
+      top: toRem(2);
+   }
+}

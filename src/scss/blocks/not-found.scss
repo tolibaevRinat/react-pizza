@@ -1,0 +1,18 @@
+.not-found {
+   padding: toRem(100);
+   @include adaptiveValue(padding, 100, 0, $maxWidthContainer, $mobile);
+
+   &__icon {
+      font-size: toRem(60);
+      @include adaptiveValue(font-size, 60, 40, $maxWidthContainer, $mobile);
+   }
+
+   &__title {
+      @include adaptiveValue(font-size, 50, 28, $maxWidthContainer, $mobile);
+
+      margin-bottom: toRem(10);
+   }
+   &__text {
+      @include adaptiveValue(font-size, 26, 20, $maxWidthContainer, $mobile);
+   }
+}

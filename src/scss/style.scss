@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+
+@import './modules';
+@import './blocks';
+
+.main-actions {
+   @include adaptiveValue(padding-top, 40, 20, $maxWidthContainer, $mobile);
+   margin-bottom: toRem(30);
+}

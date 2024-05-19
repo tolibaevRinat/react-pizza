@@ -1,0 +1,35 @@
+.cart-empty {
+   max-width: toRem(540);
+   margin: 0 auto;
+
+   @include adaptiveValue(padding-top, 160, 30, $maxWidthContainer, $mobile);
+
+   &__title {
+      margin-bottom: toRem(6);
+   }
+   &__text {
+      @include adaptiveValue(font-size, 18, 14, $maxWidthContainer, $mobile);
+      line-height: 145%;
+      color: rgb(119, 119, 119);
+
+      margin-bottom: toRem(20);
+   }
+   &__img {
+      @include adaptiveValue(margin-bottom, 74, 40, $maxWidthContainer, $mobile);
+      max-width: 100%;
+   }
+   &__link {
+      min-height: toRem(46);
+      padding: toRem(5) toRem(30);
+
+      background-color: $color;
+      color: $white;
+
+      transition: background-color 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: rgb(254, 95, 30);
+         }
+      }
+   }
+}

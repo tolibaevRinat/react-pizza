@@ -1,0 +1,68 @@
+.header {
+   border-bottom: toRem(1) solid rgb(247, 247, 247);
+   @include adaptiveValue(padding-bottom, 36, 20, $maxWidthContainer, $mobile);
+
+   &.scroll {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+   }
+
+   .container {
+      @media (max-width: toEm(600)) {
+         justify-content: center;
+      }
+   }
+
+   &__logos {
+      gap: toRem(16);
+      @media (min-width: toEm(600.98)) {
+         flex-shrink: 0;
+      }
+   }
+
+   &__main {
+      @media (max-width: toEm(600.98)) {
+         flex-wrap: wrap;
+         justify-content: center;
+      }
+   }
+
+   &__logo {
+      width: toRem(38);
+      height: toRem(38);
+   }
+
+   &__title {
+      h1 {
+         @include adaptiveValue(font-size, 24, 18, $maxWidthContainer, $mobile);
+         line-height: calc(29 / 24);
+      }
+      span {
+         color: rgb(123, 123, 123);
+      }
+   }
+
+   &__cart {
+      gap: toRem(24);
+      padding: toRem(15) toRem(22);
+
+      background-color: rgb(254, 95, 30);
+      color: $white;
+   }
+   &__price::before {
+      content: '';
+      width: toRem(1);
+      height: toRem(25);
+      background-color: rgba(255, 255, 255, 0.25);
+
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      right: toRem(-12);
+   }
+   &__count {
+      gap: toRem(8);
+   }
+}

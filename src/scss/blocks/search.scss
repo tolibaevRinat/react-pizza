@@ -1,0 +1,30 @@
+.search {
+   border: toRem(1) solid rgb(208, 200, 200);
+   padding: toRem(6) toRem(10);
+
+   max-width: toRem(350);
+   width: 100%;
+
+   outline: none;
+
+   &:focus-visible {
+      box-shadow: 0 0 toRem(5) rgb(0, 0, 0);
+   }
+   &__icon {
+      height: toRem(20);
+      width: toRem(20);
+   }
+   &__clear {
+      @include adaptiveValue(width, 26, 20, $maxWidthContainer, $mobile);
+      @include adaptiveValue(height, 26, 20, $maxWidthContainer, $mobile);
+   }
+
+   &__input {
+      width: 100%;
+      outline: none;
+      font-size: toRem(18);
+      &::placeholder {
+         font-size: toRem(18);
+      }
+   }
+}

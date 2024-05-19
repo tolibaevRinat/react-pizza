@@ -1,0 +1,103 @@
+.items {
+   &__title {
+      @include adaptiveValue(margin-bottom, 30, 20, $maxWidthContainer, $mobile);
+   }
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @media (max-width: toEm(1440.98)) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: toEm(1024.98)) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: toEm(600)) {
+         grid-template-columns: repeat(1, 1fr);
+      }
+      @include adaptiveValue(column-gap, 35, 20, $maxWidthContainer, $mobile);
+      @include adaptiveValue(row-gap, 65, 30, $maxWidthContainer, $mobile);
+   }
+}
+.item {
+   @media (max-width: toEm(600)) {
+      max-width: toRem(400);
+      margin: 0 auto;
+   }
+   &__img {
+      @include adaptiveValue(width, 280, 250, $maxWidthContainer, 600);
+      aspect-ratio: 1/1;
+      margin: 0 auto toRem(10);
+   }
+   &__title {
+      margin-bottom: toRem(18);
+
+      @include adaptiveValue(font-size, 20, 16, $maxWidthContainer, $mobile);
+   }
+   &__btn {
+      border: toRem(1) solid rgb(254, 95, 30);
+
+      padding: toRem(10) toRem(14);
+
+      @media (any-hover: hover) {
+         transition: background-color 0.3s, color 0.3s;
+         &:hover {
+            background-color: rgb(254, 95, 30);
+            .item__icon {
+               fill: $white;
+            }
+            .item__text {
+               color: $white;
+            }
+            .item__count {
+               background-color: $white;
+               color: rgb(254, 95, 30);
+            }
+         }
+      }
+   }
+   &__icon {
+      fill: rgb(254, 95, 30);
+
+      transition: fill 0.3s;
+   }
+   &__text {
+      color: rgb(254, 95, 30);
+   }
+   &__count {
+      border-radius: 50%;
+      padding: toRem(2) toRem(4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: toRem(22);
+      aspect-ratio: 1/1;
+
+      color: $white;
+      background-color: rgb(254, 95, 30);
+      transition: background-color 0.3s, color 0.3s;
+   }
+}
+.item-actions {
+   background-color: rgb(243, 243, 243);
+   padding: toRem(8);
+   gap: toRem(8);
+
+   margin-bottom: toRem(16);
+
+   &__btn {
+      font-size: toRem(14);
+
+      min-height: toRem(35);
+
+      transition: background-color 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: $white;
+         }
+      }
+      &.active {
+         background-color: $white;
+      }
+   }
+}

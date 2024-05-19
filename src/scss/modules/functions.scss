@@ -1,0 +1,8 @@
+@function toRem($px) {
+  $result: calc($px / 16) * 1rem;
+  @return $result;
+}
+@function toEm($px) {
+  $result: calc($px / 16) * 1em;
+  @return $result;
+}

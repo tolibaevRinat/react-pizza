@@ -1,0 +1,39 @@
+.pagination {
+   margin-top: toRem(40);
+   li.disabled a {
+      color: rgb(202, 197, 197);
+      border: toRem(2) solid rgb(202, 197, 197);
+   }
+
+   li.selected a {
+      background-color: rgb(254, 95, 30);
+      color: $white;
+   }
+
+   a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: toRem(44);
+      height: toRem(44);
+
+      color: rgb(254, 95, 30);
+
+      line-height: 1;
+
+      cursor: pointer;
+
+      font-size: toRem(20);
+
+      border: toRem(2) solid rgb(254, 95, 30);
+      border-radius: 50%;
+
+      transition: background-color 0.3s, color 0.3s, border 0.3s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: $white;
+            background-color: rgb(254, 95, 30);
+         }
+      }
+   }
+}
