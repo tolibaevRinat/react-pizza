@@ -3,7 +3,7 @@ import axios from 'axios';
 import { RootState } from '../store';
 import { FetchPizzasArgs, Meta, PizzaSliceState, PizzasItems, Status } from './types/pizzaTypes';
 
-const URL = `https://af72634eed6a7f95.mokky.dev/items`;
+const URL = `https://d474bb3f37b7cb09.mokky.dev/items`;
 
 export const fetchPizzas = createAsyncThunk(
    'pizza/fetchPizzasTatus',
